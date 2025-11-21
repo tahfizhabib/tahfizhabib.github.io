@@ -1,56 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tahfiz Habib</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Portfolio — GitHub Pages Template</title>
+  <meta name="description" content="A single-file GitHub Pages template (HTML+CSS+JS) you can drop into a repo and publish." />
   <style>
-    body { margin:0; font-family: Arial,sans-serif; background:#0f0f0f; color:#f0f0f0; display:flex; justify-content:center; }
-    .container { text-align:center; max-width:900px; padding:20px; }
-    h1 { margin:10px 0; font-size:2em; }
-    p { margin:5px 0 20px 0; color:#aaa; }
-    table { margin:0 auto 20px auto; border-spacing:8px; }
-    img { border-radius:4px; max-height:150px; }
-    .tech-stack img { width:45px; height:45px; margin:2px; border-radius:4px; }
-    .badge { margin-top:15px; }
-    a { color:#f0f0f0; text-decoration:none; }
+    :root{--bg:#000000;--card:#050505;--muted:#8a8a8a;--accent:#00e5ff}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071028 0%,#071226 100%);color:#e6eef8;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    nav a{color:var(--muted);margin-left:14px;text-decoration:none}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:26px;margin-top:28px}
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    h1{margin:0 0 8px;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .proj{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));}
+    footer{margin-top:28px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.projects{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tahfiz Habib</h1>
-    <p>Full-Stack Developer · 12th Grade Student<br>Building fast, clean, minimal software</p>
+  <main class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GH</div>
+        <div>
+          <div style="font-weight:700">Tahfiz Habib</div>
+          <div style="font-size:13px;color:var(--muted)">Full‑Stack Developer · 12th Grade Student</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <h2>Omarchy Themes</h2>
-    <table>
-      <tr>
-        <td><a href="https://github.com/tahfizhabib/omarchy-rustleaf-theme"><img src="https://github.com/user-attachments/assets/05fa1914-c349-4ef5-a0aa-b7473ea81360"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-amberbyte-theme"><img src="https://github.com/user-attachments/assets/7b65061c-bff2-403b-af35-3ed83384853d"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-artzen-theme"><img src="https://github.com/user-attachments/assets/f6c422c1-8904-4ca9-9513-d6724f089559"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-crimson-theme"><img src="https://github.com/user-attachments/assets/30769418-ab0f-4632-b932-37d7948be56b"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-cyanyze-theme"><img src="https://github.com/user-attachments/assets/303a48b8-eb1e-40b0-8c85-886486896f3a"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-azure-theme"><img src="https://github.com/user-attachments/assets/314910d9-4e5c-4135-b332-f7cf95cde8a5"></a></td>
-        <td><a href="https://github.com/tahfizhabib/omarchy-vurple-theme"><img src="https://github.com/user-attachments/assets/07ae941a-417c-46e9-b374-92011b9cdf47"></a></td>
-      </tr>
-    </table>
+    <section class="hero">
+      <div class="card">
+        <h1>Hello — I'm Tahfiz Habib</h1>
+        <p class="lead">Building fast, clean, minimal software. This site showcases my Omarchy themes, tech stack, and GitHub work.</p>
 
-    <h2>Tech Stack</h2>
-    <div class="tech-stack">
-      <a href="https://go.dev"><img src="https://skillicons.dev/icons?i=go"></a>
-      <a href="https://python.org"><img src="https://skillicons.dev/icons?i=python"></a>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://skillicons.dev/icons?i=js"></a>
-      <a href="https://react.dev"><img src="https://skillicons.dev/icons?i=react"></a>
-      <a href="https://cplusplus.com"><img src="https://skillicons.dev/icons?i=cpp"></a>
-      <a href="https://git-scm.com"><img src="https://skillicons.dev/icons?i=git"></a>
-      <a href="https://aws.amazon.com"><img src="https://skillicons.dev/icons?i=aws"></a>
-      <a href="https://docker.com"><img src="https://skillicons.dev/icons?i=docker"></a>
-      <a href="https://www.kernel.org"><img src="https://skillicons.dev/icons?i=linux"></a>
-    </div>
+        <h3 style="margin-top:18px">What I do</h3>
+        <ul style="color:var(--muted);margin:8px 0 0;padding-left:18px">
+          <li>Frontend engineering (React / Vite / Tailwind)</li>
+          <li>Infrastructure & DevOps (Docker, CI/CD, Kubernetes)</li>
+          <li>Open-source projects and tools</li>
+        </ul>
 
-    <div class="badge">
-      <a href="https://github.com/tahfizhabib">
-        <img src="https://img.shields.io/github/stars/tahfizhabib?style=flat-square&label=Stars&color=000000&labelColor=FFFFFF&logo=github&logoColor=FFFFFF">
-      </a>
-    </div>
-  </div>
+        <div style="margin-top:16px">
+          <a href="#projects" style="text-decoration:none;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;display:inline-block">See projects</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p style="margin:6px 0;color:var(--muted)">Email: <a href="mailto:tahfizhabib21@gmail.com">tahfizhabib21@gmail.com</a></p>
+        <p style="margin:6px 0;color:var(--muted)">GitHub: <a href="https://github.com/tahfizhabib" target="_blank">@tahfizhabib</a></p>
+
+        <h4 style="margin-top:12px">Tech Stack</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">Go</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">Python</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">JavaScript</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">React</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">C++</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">Git</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">AWS</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">Docker</span>
+          <span style="font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02)">Linux</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" style="margin-top:18px">
+      <h2 style="margin:6px 0">Omarchy Themes</h2>
+      <div class="projects">
+        <div class="proj card"><strong><a style="color:var(--accent);text-decoration:none" href="https://github.com/tahfizhabib/omarchy-rustleaf-theme" target="_blank">Rustleaf</a></strong></strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-rustleaf-theme">Repo</a></div>
+        <div class="proj card"><strong>Amberbyte</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-amberbyte-theme">Repo</a></div>
+        <div class="proj card"><strong>Artzen</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-artzen-theme">Repo</a></div>
+        <div class="proj card"><strong>Crimson</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-crimson-theme">Repo</a></div>
+        <div class="proj card"><strong>Cyanyze</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-cyanyze-theme">Repo</a></div>
+        <div class="proj card"><strong>Azure</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-azure-theme">Repo</a></div>
+        <div class="proj card"><strong>Vurple</strong><p style="margin:8px 0;color:var(--muted)">Theme from Omarchy collection.</p><a href="https://github.com/tahfizhabib/omarchy-vurple-theme">Repo</a></div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:22px">
+      <div class="card">
+        <h3>Get in touch</h3>
+        <p style="color:var(--muted)">Want this tailored to your content? Tell me which colors, fonts, or sections to include and I'll update it.</p>
+      </div>
+    </section>
+
+    <footer>
+      Built with ❤️ — Drop this file into a repo named <code>yourusername.github.io</code> and push to publish.
+    </footer>
+  </main>
 </body>
 </html>
