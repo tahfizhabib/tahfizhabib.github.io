@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miqim — Portfolio</title>
 
+    <!-- Load Fira Code for headline -->
+    <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -14,14 +17,6 @@
             --panel: #1a1c29;
             --text: #e0e0f0;
             --dim: #9a9bb0;
-            --accent: #ff7c6b;
-        }
-
-        [data-theme="light"] {
-            --bg: #f9f9f9;
-            --panel: #ffffff;
-            --text: #1a1a1a;
-            --dim: #555;
             --accent: #ff7c6b;
         }
 
@@ -58,31 +53,27 @@
             }
         }
 
-        .header {
-            margin-bottom: 22px;
-        }
-
-        .header pre.ascii-avatar {
-            font-size: 0.75rem;
-            line-height: 0.75rem;
-            color: var(--accent);
-            white-space: pre;
+        .headline {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff7c6b, #ffa36b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             margin-bottom: 12px;
         }
 
         .header p {
             font-size: 0.92rem;
             color: var(--dim);
+            margin-bottom: 6px;
         }
 
         .username {
             color: var(--accent);
             font-size: 1rem;
-        }
-
-        h1 {
-            font-size: 1.9rem;
-            margin-bottom: 4px;
         }
 
         h2 {
@@ -203,16 +194,12 @@
 
 <body>
     <div class="wrap">
+        <!-- MIQIM headline first -->
+        <h1 class="headline">MIQIM</h1>
 
+        <!-- Terminal-like username -->
         <div class="header">
-            <pre class="ascii-avatar">
-▗▖  ▗▖▗▄▄▄▖▗▄▄▄▖ ▗▄▄▄▖▗▖  ▗▖
-▐▛▚▞▜▌  █  ▐▌ ▐▌   █  ▐▛▚▞▜▌
-▐▌  ▐▌  █  ▐▌ ▐▌   █  ▐▌  ▐▌
-▐▌  ▐▌▗▄█▄▖▐▙▄▟▙▖▗▄█▄▖▐▌  ▐▌
-</pre>
             <p><span class="username">miqim@portfolio</span>:~$</p>
-            <h1>Miqim (Tahfiz Habib)</h1>
             <p>Developer • Designer • Linux Enthusiast</p>
         </div>
 
