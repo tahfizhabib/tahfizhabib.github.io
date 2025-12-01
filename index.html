@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miqim's devfile</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f111a;
+            --panel: #1a1c29;
+            --text: #e0e0f0;
+            --dim: #9a9bb0;
+            --accent: #ff7c6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "JetBrains Mono", monospace;
+            padding: 30px 12px;
+            line-height: 1.55;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background: var(--panel);
+            padding: 28px 32px;
+            border-radius: 10px;
+            transition: background 0.4s;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .headline {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff7c6b, #ffa36b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            font-size: 0.92rem;
+            color: var(--dim);
+            margin-bottom: 6px;
+        }
+
+        .username {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        h2 {
+            margin-top: 28px;
+            font-size: 1.15rem;
+            color: var(--accent);
+        }
+
+        p {
+            font-size: 0.97rem;
+            margin-top: 6px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: #202236;
+            font-size: 0.85rem;
+            border: 1px solid #2a2c44;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .card {
+            padding: 14px;
+            background: #1a1c29;
+            border-radius: 6px;
+            border: 1px solid #2a2c44;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            margin-top: 6px;
+            color: #b9b9b9;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--dim);
+            font-size: 0.8rem;
+            margin-top: 25px;
+        }
+
+        /* Skills Progress Bars */
+        .skill {
+            margin: 8px 0;
+        }
+
+        .skill-name {
+            font-size: 0.87rem;
+            margin-bottom: 4px;
+        }
+
+        .progress-container {
+            background: #2a2c44;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 8px;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--accent);
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        /* Typing effect for About */
+        .typing {
+            border-right: 2px solid var(--accent);
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            display: inline-block;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- MIQIM headline first -->
+        <h1 class="headline">MIQIM</h1>
+
+        <!-- Terminal-like username -->
+        <div class="header">
+            <p><span class="username">miqim@portfolio</span>:~$</p>
+            <p>Developer • Designer • Linux Enthusiast</p>
+        </div>
+
+        <h2>about</h2>
+        <p id="about-text" class="typing"></p>
+
+        <h2>tech-stack</h2>
+        <div class="badges">
+            <span class="badge">Go</span>
+            <span class="badge">Python</span>
+            <span class="badge">C++</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">React</span>
+            <span class="badge">Git</span>
+            <span class="badge">Nix</span>
+            <span class="badge">Docker</span>
+            <span class="badge">DevOps</span>
+            <span class="badge">Rust (learning)</span>
+        </div>
+
+        <h2>skills</h2>
+        <div class="skill">
+            <div class="skill-name">Go</div>
+            <div class="progress-container">
+                <div class="progress" style="width: 85%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="progress-container">
+                <div class="progress" style="width: 90%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress-container">
+                <div class="progress" style="width: 80%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Rust</div>
+            <div class="progress-container">
+                <div class="progress" style="width: 50%"></div>
+            </div>
+        </div>
+
+        <h2>Omarchy Themes</h2>
+        <div class="grid">
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-vurple-theme','_blank')">
+                <h3>Vurple</h3>
+                <p>Purple, glowing, modern Omarchy theme.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-azure-theme','_blank')">
+                <h3>Azure</h3>
+                <p>Sky-blue minimalist design.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-cyanyze-theme','_blank')">
+                <h3>Cyanyze</h3>
+                <p>Cyan futuristic UI direction.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-artzen-theme','_blank')">
+                <h3>Artzen</h3>
+                <p>Animated, minimal red-dark blend.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-amberbyte-theme','_blank')">
+                <h3>Amberbyte</h3>
+                <p>Ninja-inspired reddish palette.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-rustleaf-theme','_blank')">
+                <h3>Rustleaf</h3>
+                <p>Gruvbox warmth and modern tones.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/omarchy-crimson-theme','_blank')">
+                <h3>Crimson</h3>
+                <p>Deep red, sharp, elegant theme.</p>
+            </div>
+        </div>
+
+        <h2>Other Projects</h2>
+        <div class="grid">
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/niriha','_blank')">
+                <h3>Niriha</h3>
+                <p>Minimal Arch Linux + Niri WM experience.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/gwfox-css','_blank')">
+                <h3>gwfox CSS</h3>
+                <p>Clean Firefox UI/UX redesign.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/Nvidia-Rebirth','_blank')">
+                <h3>Nvidia Rebirth</h3>
+                <p>Performance-tuned Nvidia config.</p>
+            </div>
+            <div class="card" onclick="window.open('https://github.com/tahfizhabib/emphase-rice','_blank')">
+                <h3>Emphase</h3>
+                <p>Clean, aesthetic workflow rice.</p>
+            </div>
+        </div>
+
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:tahfizhabib21@gmail.com">tahfizhabib21@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/tahfizhabib">@tahfizhabib</a></p>
+    </div>
+
+    <footer>tahfizhabib@miqim 2025 all rights reserved</footer>
+
+    <script>
+        // Animate skill bars and type About
+        window.addEventListener('DOMContentLoaded', () => {
+            const skills = document.querySelectorAll('.progress');
+            skills.forEach(skill => {
+                let width = skill.style.width;
+                skill.style.width = '0';
+                setTimeout(() => { skill.style.width = width; }, 100);
+            });
+
+            const aboutText = "I’m a self-taught developer from Bangladesh focused on Linux, open-source, and programming. I contribute to projects, build rices, configs, scripts, and tools to optimize workflows and push system performance to the max. Aiming to pursue software engineering, I obsess over every detail of setup, automation, and efficiency, treating every system and terminal as a lab for experimentation. I live in the terminal, constantly refining setups, testing workflows, and staying connected 24/7 to learn, create, and improve. My goal is to turn curiosity, contribution, and optimization into practical, powerful, and sustainable setups.";
+            const el = document.getElementById('about-text');
+            let idx = 0;
+
+            function type() {
+                if (idx < aboutText.length) {
+                    el.innerHTML += aboutText.charAt(idx);
+                    idx++;
+                    setTimeout(type, 15);
+                }
+            }
+            type();
+        });
+    </script>
+</body>
+
+</html>
